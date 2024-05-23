@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+    <style>
+         body {
+        font-family: "Times New Roman", Times, serif;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+      }
+
+        nav {
+        background: rgb(1, 14, 44);
+        height: 70px;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        overflow: hidden;
+        top: 0px;
+      }
+      label.logo {
+        color: white;
+        font-size: 35px;
+        padding: 5px 15px;
+        font-weight: bold;
+        float: left;
+        margin: 10px;
+      }
+      nav ul {
+        float: right;
+        margin-right: 20px;
+      }
+      nav ul li {
+        display: inline-block;
+        margin: 10px;
+      }
+      nav ul li a {
+        color: white;
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 3px;
+        text-decoration: none;
+      }
+      a.active,a:hover {
+        border: 1px solid orange;
+      }
+
+      select{
+        background: rgb(1, 14, 44);
+        color: white;
+        margin-bottom: 5px;
+        font-size: 20px;
+        padding: 5px;  
+
+
+      }
+      select li{
+        font-size: 15px;
+      }
+      select:hover{
+        border: 1px solid orange;
+      }
+      .imageone {
+        width: 100%;
+        height: 700px;
+        background-image: url("images/study.jpg");
+        background-size: cover;
+        color: white;
+        align-content: center;
+        text-align: center;
+        text-decoration: none;
+        position: relative;
+        opacity: 0.5;
+      }
+      .imageone:hover{
+          opacity:1;
+      }
+      .content {
+        font-size: 50px;
+        font-weight: bold;
+      }
+      .container1 {
+        height: 700px;
+        width: 100%;
+        position: relative;
+      }
+      .flex-container1 {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end; /* Center items at the bottom */
+        justify-content: center;
+        align-content: center;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        column-gap: 60px;
+      }
+      .flex-container1 > div {
+        background-color: rgb(1, 14, 44);
+        width: 20%;
+        height: 50px;
+        text-align: center;
+        color: white;
+        margin: 5px;
+        padding: 5px;
+        align-content: center; /* Adjust the width for better fit on smaller screens */
+        justify-self: center;
+      }
+
+
+      .imagetwo {
+        width: 100%;
+        height: 700px;
+        text-align: center;
+        background-image: url("images/choosing-bg.jpg");
+        background-size: cover;
+        color: white;
+      }
+      /* .boxone {
+        width: 250px;
+        height: 100px;
+        color: white;
+      } */
+      .lining {
+        width: 1px;
+        height: 80px;
+        border: 1px solid white;
+        padding: 0px;
+        color: white;
+      }
+
+      .boxone {
+        width: 350px;
+        height: 42px;
+        border: 2px solid white;
+        color: white;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        padding: 6px;
+        text-transform: uppercase;
+      }
+      .boxtwo {
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        width: 100%;
+        color: white;
+      }
+      .boxtwo > div {
+        width: 100%;
+        height: 100px;
+        color: white;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .flex-container2 {
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .flex2-image-left {
+        flex: 30%;
+        height: 300px;
+        margin: 20px;
+      }
+
+      .flex2-content-right {
+        flex: 40%;
+      }
+
+      .flex2-content-right p,h2{
+        width: 700px;
+        text-align: justify;
+        line-height: 30px;
+      }
+
+      .flex2-image-left img {
+        height: 400px;
+        width: 80%;
+      }
+      .imagethree {
+        width: 100%;
+        height: 600px;
+        text-align: center;
+        background-image: url("images/coming-soon-bg.jpg");
+        background-size: contain;
+        color: white;
+      }
+
+      .flex-container3 {
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .flex3-item-left {
+        padding: 50px;
+        flex: 50%;
+        height: 200px;
+        margin: 50px;
+      }
+
+      .flex3-item-right {
+        padding: 10px;
+        margin: 20px;
+        flex: 30%;
+        height: 400px;
+        text-align: justify;
+        justify-content: center;
+        border: transparent;
+        background-color: rgba(95, 93, 93, 0.4);
+      }
+      .flex-container3-subsection {
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        text-align: center;
+        gap: 10px;
+        justify-content: center;
+      }
+      .flex3-item-day {
+        width: 25%;
+        text-align: center;
+        color: white;
+        background-color: gray;
+        opacity: 0.9;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .flex3-item-hour {
+        width: 25%;
+        text-align: center;
+        color: white;
+
+        background-color: gray;
+        opacity: 0.9;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .flex3-item-minutes {
+        width: 25%;
+        text-align: center;
+        color: white;
+        background-color: gray;
+        opacity: 0.9;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .flex3-item-seconds {
+        width: 25%;
+        text-align: center;
+        color: white;
+        background-color: gray;
+        opacity: 0.9;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .color-container3 {
+        width: 100%;
+        height: 100px;
+        background-color: gray;
+        color: white;
+        text-align: justify;
+        align-content: center;
+        justify-content: center;
+        margin: 0px;
+      }
+      .register-container3 {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        background: transparent;
+        margin-bottom: 40px;
+      }
+      .register-container3 input {
+        margin-top: 10px;
+        width: 90%;
+        height: 30px;
+        color: white;
+        border: transparent;
+        margin-bottom: 20px;
+        background-color: rgba(95, 93, 93, 0.4);
+        padding: 5px;
+        font-size: 18px;
+      }
+      .register-container3 button {
+        height: 40px;
+        width: 120px;
+        background-color: orange;
+        color: white;
+      }
+      .imagefour {
+        width: 100%;
+        height: 700px;
+        text-align: center;
+        background-image: url("images/choosing-bg.jpg");
+        background-size: cover;
+        color: white;
+      }
+      .border {
+        width: 250px;
+        height: 42px;
+        border: 2px solid white;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        
+      }
+      .cards{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+      .card-body img {
+        border-radius: 100%;
+        height: 50px;
+        width: 50px;
+        float: left;
+        margin-bottom: 10px;
+      }
+      .imagefive {
+        width: 100%;
+        height: 700px;
+        background-image: url("images/video-bg.jpg");
+        background-size: cover;
+        color: white;
+        background-repeat: no-repeat;
+      }
+      .flex-container5 {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+      }
+
+      .flex5-item-left {
+        padding: 50px;
+        flex: 40%;
+        height: 350px;
+        margin: 80px;
+      }
+
+      .flex5-item-right {
+        flex: 35%;
+        height: 350px;
+        margin: 80px;
+        background-image: url("images/main-thumb.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+      .textalign {
+        text-align: justify;
+        padding: 10px;
+      }
+      .textalign button {
+        background-color: orange;
+        color: white;
+        height: 50px;
+        width: 150px;
+      }
+      .text-container5 {
+        height: 70px;
+        width: 100%;
+        background-color: white;
+        color: black;
+        font-size: 20px;
+        position: absolute;
+        bottom: 0px;
+        opacity: 0.9;
+        font-weight: bold;
+      }
+      .text-container5 p {
+        display: inline-block;
+        float: left;
+        padding: 10px;
+      }
+      .text-container5 img {
+        padding: 15px;
+        margin: 0px;
+        float: right;
+        border-radius: 100px;
+      }
+      .imagesix {
+        width: 100%;
+        height: 700px;
+        text-align: center;
+        background-image: url("images/choosing-bg.jpg");
+        background-size: cover;
+        color: white;
+      }
+      .box-1 {
+        width: 250px;
+        height: 100px;
+        color: white;
+       
+      }
+      .box-2 {
+       font-size: 20px;
+        border: 2px solid white;
+        color: white;
+        
+      }
+
+      .flex-container6 {
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        text-align: center;
+        margin: 20px;
+      }
+
+      .flex6-item-left {
+        flex: 30%;
+        height: 400px;
+        margin: 20px;
+        padding: 20px;
+        border: transparent;
+        background-color: rgba(95, 93, 93, 0.4);
+      }
+      .flex6-item-right {
+        flex: 30%;
+        height: 400px;
+        margin: 6px;
+        padding: 10px;
+      }
+      .flex6-item-left input[type="text"],
+      .flex6-item-left input[type="email"] {
+        width: 45%;
+        height: 30px;
+        color: white;
+        border: transparent;
+        margin-bottom: 20px;
+        font-weight: bold;
+
+        background-color: rgba(95, 93, 93, 0.4);
+        padding: 5px;
+      }
+      .flex6-item-left textarea {
+        width: 90%;
+        height: 200px;
+        color: white;
+        font-weight: bold;
+        border: transparent;
+        margin-bottom: 20px;
+        background-color: rgba(95, 93, 93, 0.8);
+        padding: 5px;
+      }
+
+      .flex6-item-left button {
+        background-color: orange;
+        color: white;
+        border: none;
+        height: 60px;
+        width: 200px;
+
+        cursor: pointer;
+      }
+
+      
+      footer {
+       
+        width: 100%;
+        background: rgb(1, 14, 44);
+        color: white;
+        text-align: center;
+        height: 100px;
+       padding: 30px;
+       align-items: center;
+       justify-content: center;
+       font-size: 22px;
+      
+      }
+
+
+
+
+
+      
+
+
+      @media only screen and (max-width: 500px) {
+        nav ul li a{
+        display: block;
+        margin: 10px;
+      }
+
+        .imageone{
+          height: 700px;
+          
+        }
+
+        .flex-container1 {
+          flex-direction: column;
+          align-items: center; /* Center items horizontally */
+          justify-content: flex-end; /* Push items to the bottom */
+          text-align: center;
+          height: 100%;
+          width: 100%;
+        }
+
+        .flex-container1 > div {
+          width: 90%;
+          align-content: center; /* Adjust the width for better fit on smaller screens */
+          justify-self: center;
+        }
+        .imagetwo {
+          width: 100%;
+          height: 950px;
+          text-align: center;
+          background-image: url("images/choosing-bg.jpg");
+          background-size: cover;
+          color: white;
+        }
+        .flex-container2 {
+          display: flex;
+          flex-direction: column;
+          height: 800px;
+          width: 100%;
+        }
+        .flex2-image-left {
+          height: 350px;
+        }
+       
+      .flex2-content-right p,h2{
+        width: 400px;
+        text-align: justify;
+        line-height: 24px;
+       
+      }
+        .flex2-image-left img {
+          height: 350px;
+          width: 90%;
+        }
+        .imagethree {
+          width: 100%;
+          height: 900px;
+          text-align: center;
+          background-image: url("images/coming-soon-bg.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          color: white;
+          align-content: center;
+          justify-content: center;
+        }
+
+
+        .flex-container3 {
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 900px;
+          width: 90%;
+        }
+
+        .flex3-item-day {
+          width: 20%;
+          text-align: center;
+          color: white;
+          align-items: center;
+
+          background-color: gray;
+          opacity: 0.9;
+          font-size: 10px;
+          font-weight: bold;
+        }
+        .flex3-item-hour {
+          width: 20%;
+          text-align: center;
+          color: white;
+          font-size: 10px;
+          background-color: gray;
+          opacity: 0.9;
+          align-items: center;
+          font-weight: bold;
+        }
+        .flex3-item-minutes {
+          width: 20%;
+          text-align: center;
+          color: white;
+          font-size: 10px;
+          background-color: gray;
+          opacity: 0.9;
+          font-weight: bold;
+          align-items: center;
+        }
+        .flex3-item-seconds {
+          width: 20%;
+          text-align: center;
+          color: white;
+          font-size: 10px;
+          background-color: gray;
+          opacity: 0.9;
+          align-items: center;
+          font-weight: bold;
+        }
+
+        .flex3-item-left {
+          padding: 1px;
+          flex: 40%;
+          height: 150px;
+          margin-left: 50px;
+        }
+
+        .flex3-item-right {
+          padding: 5px;
+          flex: 30%;
+          height: 400px;
+          text-align: justify;
+          justify-content: center;
+          align-items: center;
+          margin: 13px;
+        }
+        .cards{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+      }
+      .imagefour{
+        height: 2330px;
+      }
+      .flex-container5 {
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 700px;
+          width: 100%;
+        }
+        .imagefive {
+          height: 750px;
+          width: 100%;
+        }
+      .flex-container5 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 80px;
+      }
+      
+
+        .flex5-item-left {
+          padding: 10px;
+          flex: 40%;
+          height: 300px;
+          margin: 10px;
+        }
+
+        .flex5-item-right {
+          padding: 10px;
+          flex: 35%;
+          height: 200px;
+          margin: 20px;
+          text-align: justify;
+          background-image: url("images/main-thumb.png");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+       
+        .text-container5 {
+          left: 0px;
+        }
+        .imagesix {
+          height: 900px;
+        }
+
+        .flex-container6 {
+          flex-direction: column;
+          height: 750px;
+        }
+
+        .flex6-item-left,
+        .flex6-item-right {
+          flex: 100%;
+          width: 90%;
+          margin: 10px;
+          padding: 10px;
+          height: 350;
+        }
+
+        .flex6-item-left input,
+        .flex6-item-left textarea {
+          width: 90%;
+          height: 30px;
+        }
+
+        .flex6-item-left textarea {
+          height: 150px;
+          display: block;
+          margin-left: 20px;
+        }
+
+        .flex6-item-right iframe {
+          width: 380px;
+          height: 350px;
+        }
+         
+      footer {
+       
+       width: 100%;
+       background: rgb(1, 14, 44);
+       color: white;
+       text-align: center;
+       height: 100px;
+      padding: 30px;
+      font-size: 12px;
+     }
+
+
+       
+    }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <label class="logo"><span style="color: orange">GRAD</span> SCHOOL</label>
+        <ul>
+          <li><a class="active" href="#home">HOME</a></li>
+          <select>
+            <li><option value="ABOUT US"><a href="#aboutus" style="font-size: 20px;">ABOUT US</a></option></li>
+           <li> <option value="WHO WE ARE?">WHO WE ARE</option></li>
+           <li> <option value="WHAT WE DO">WHAT WE DO</option></li>
+           <li> <option value="HOW IT WORKS">HOW IT WORKS</option></li>
+           <li><option value="EXTERNAL URL">EXTERNAL URL</option></li> 
+          </select>
+          
+          <li><a href="#courses">COURSES</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#external">EXTERNAL</a></li>
+        </ul>
+      </nav>
+
+      <div class="container1" id="home">
+        <div class="imageone">
+          <p style="color: black;">GRADUATE SCHOOL OF MANAGEMENT </p>
+          <div class="content">
+            <p><span style="color: orange">YOUR</span> CLASSROOM</p>
+            <button class="btn btn-primary" style="background-color: orange;">
+              <a href="#contact" style="color: white; margin: 10px;text-decoration: none;font-size: 13px;padding: 5px;">DISCOVER ME</a >
+            </button>
+          </div>
+          <div class="flex-container1">
+            <div>
+              <p><span>&#128393;</span>ALL COURSES</p>
+            </div>
+            <div>
+              <p><span>&#x1F393;</span>VIRTUAL CLASSES</p>
+            </div>
+            <div>
+              <p><span>&#10697;</span>&nbsp;&nbsp;REAL MEETING</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="imagetwo" id="aboutus">
+        <center>
+          
+            <div class="lining"></div>
+            <div class="boxone">why choose grad school</div>
+          
+        </center>
+        <div class="boxtwo">
+          <div style="color: orange">
+            BEST EDUCATION <br /><span style="background-color: orange;border-radius: 3px;">&#x25a2;</span>
+          </div>
+          <div>TOP MANAGEMENT <br /><span style="background-color: white;border-radius: 3px;">&#x25a2;</span></div>
+          <div>QUALITY MEETING <br /><span style="background-color: white;border-radius: 3px;">&#x25a2;</span></div>
+        </div>
+        <center>
+          <div class="flex-container2">
+            <div class="flex2-image-left">
+              <img src="./images/choose-us-image-01.png" alt="choose us image 1" id="nandi">
+            </div>
+  
+            <div class="flex2-content-right">
+              <h2>BEST EDUCATION</h2>
+              <p>
+                Grad school is a free education with a bootstrap 4.5.2 CSS layout.
+                Feel free to use it for educational or commercial purposes. you
+                may want to make a little donation to TemplateMo. please tell your
+                friends about us. Feel free to use it for educational or commercial purposes.
+                 Grad school is a free education with a bootstrap 4.5.2 CSS layout.
+                Feel free to use it for educational or commercial purposes. you
+                may want to make a little donation to TemplateMo.Thank you.
+              </p>
+            </div>
+          </div>
+        </center>
+      </div>
+      <div class="imagethree">
+        <div class="flex-container3">
+          <div class="flex3-item-left">
+            <p style="font-size: 40px; font-weight: bold">
+              Take <span style="color: orange">any Online course</span> and win
+              $326 for your next class
+            </p>
+  
+            <div class="flex-container3-subsection">
+              <div class="flex3-item-day">
+                <h1>26</h1>
+                <p style="color: orange">DAYS</p>
+              </div>
+              <div class="flex3-item-hour">
+                <h1>06</h1>
+                <p style="color: orange">HOURS</p>
+              </div>
+              <div class="flex3-item-minutes">
+                <h1>24</h1>
+                <p style="color: orange">MINUTES</p>
+              </div>
+              <div class="flex3-item-seconds">
+                <h1>15</h1>
+                <p style="color: orange">SECONDS</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="flex3-item-right">
+            <div class="color-container3">
+              <center>
+                <p>
+                  Register your free account and get immediate access to online
+                  courses
+                </p>
+              </center>
+            </div>
+  
+            <div class="register-container3">
+              <input type="text" placeholder="Name" /><br />
+              <input type="email" placeholder="email" /><br />
+              <input type="tel" placeholder="phone number" /><br />
+              <button class="btn btn-primary">GET IT NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="imagefour">
+        <center>
+            <div class="flex-container4">
+              <div class="lining"></div>
+              <div class="border" id="courses">CHOOSE YOUR COURSE</div>
+            </div>
+        </center>
+          <br><br>
+          <div class="cards">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/courses-02.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img src="./images/author-05.png" alt="" />
+              <p style="float: right; color: orange">PAY >></p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/courses-03.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img src="./images/author-04.png" alt="" />
+              <p style="float: right; color: orange">PAY >></p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/courses-04.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img src="./images/author-01.png" alt="" />
+              <p style="float: right; color: orange">FREE >></p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/courses-05.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img src="./images/author-03.png" alt="" />
+              <p style="float: right; color: orange">PAY >></p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/courses-01.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <img src="./images/author-02.png" alt="" />
+              <p style="float: right; color: orange">FREE >></p>
+            </div>
+        </div>
+          </div>
+        </center>
+      </div>
+      <div class="imagefive" id="extenal">
+        <div class="flex-container5">
+          <div class="flex5-item-left">
+            <div>
+              <div class="textalign">
+                <p style="font-size: 20px;">OUR PRESENTATION IS FOR YOU</p>
+                <h2>
+                  WATCH THE VIDEO TO LEARN MORE
+                  <span style="color: orange"> ABOUT GRAD SCHOOL</span>
+                </h2>
+                <p style="font-size: 18px;">
+                  you are NOT allowed to redistribute this template ZIP file on
+                  any template collection website. However, you can use this
+                  template to convert into a specific theme for any kind of CMS
+                  platform such as WordPress. You may
+                  <a href="" style="font-size: 18px;text-transform: uppercase;">contact TemplateMo </a> for details
+                </p>
+                <p style="font-size: 18px;">
+                  Suspendisse tincidunt, magna ut finibus rutrum,libero dolor
+                  euismod odio, nec , interdum quam felis non ante.
+                </p>
+                <button>EXTERNAL URL</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="flex5-item-right">
+            <div class="text-container5">
+              <p style="display: inline-block">POWERFUL TEMPLATE</p>
+              <img src="./images/playbutton.jpg" height="50px" width="50px" style="float: right">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="imagesix" id="contact">
+        <center>
+          <div class="box-1">
+            <div class="lining"></div>
+            <div class="box-2" style="height:40px;width: 220px;padding: 10px;text-align: center;">Let's Keep In Touch</div>
+          </div>
+  <br><br>
+          <div class="flex-container6">
+            <div class="flex6-item-left">
+              <form action="">
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your Email" />
+                <textarea rows="20" cols="100" placeholder="Your Message"></textarea>
+                <button type="button" class="btn btn-primary" style="background-color: orange;">SEND MESSAGE NOW</button>
+              </form>
+            </div>
+  
+            <div class="flex6-item-right">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.3116975539883!2d-43.390167220038684!3d-23.012324925500497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bdb695cd967b7%3A0x171cdd035a6a9d84!2sAv.%20L%C3%BAcio%20Costa%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%20Brazil!5e0!3m2!1sen!2sin!4v1714655539590!5m2!1sen!2sin"
+                width="100%"
+                height="400px"
+              ></iframe>
+            </div>
+          </div>
+        </center>
+      </div>
+      <footer id="external">
+        <a>&copy; COPYRIGHT 2024 BY GRAD SCHOOL | DESIGN BY:
+          <span style="color: orange">ABHITHA DUDDU</span></a>
+      </footer>
+</body>
+</html>
